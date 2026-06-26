@@ -7,7 +7,7 @@ const state = {
     history: JSON.parse(localStorage.getItem("githubAnalyzerHistory") || "[]"),
 };
 
-const API_BASE_URL = "http://localhost:3000/api/github";
+const API_BASE_URL = `${window.location.origin}/api/github`;
 
 const elements = {
     form: document.getElementById("searchForm"),
