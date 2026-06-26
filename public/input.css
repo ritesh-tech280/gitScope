@@ -1,0 +1,143 @@
+@import "tailwindcss";
+
+@custom-variant light-mode (&:where(.light-mode, .light-mode *));
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    min-height: 100vh;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    border: 1px solid rgb(255 255 255 / 0.1);
+    border-radius: 1.5rem;
+    background: linear-gradient(135deg, rgb(255 255 255 / 0.08), rgb(255 255 255 / 0.035));
+    box-shadow: 0 24px 80px rgb(0 0 0 / 0.28), inset 0 1px 0 rgb(255 255 255 / 0.08);
+    backdrop-filter: blur(22px);
+  }
+
+  .light-mode .glass-card {
+    border-color: rgb(226 232 240);
+    background: rgb(255 255 255 / 0.82);
+    box-shadow: 0 20px 60px rgb(15 23 42 / 0.08);
+  }
+
+  .active-nav {
+    border: 1px solid rgb(139 92 246 / 0.35);
+    background: linear-gradient(135deg, rgb(59 130 246 / 0.18), rgb(139 92 246 / 0.24));
+    color: white;
+  }
+
+  .light-mode .active-nav {
+    color: rgb(15 23 42);
+  }
+
+  .card-hover {
+    transition: transform 240ms ease, border-color 240ms ease, background 240ms ease;
+  }
+
+  .card-hover:hover {
+    transform: translateY(-4px);
+    border-color: rgb(139 92 246 / 0.45);
+  }
+
+  .fade-in {
+    animation: fade-in 520ms ease both;
+  }
+
+  .shimmer {
+    position: relative;
+    overflow: hidden;
+    background: rgb(255 255 255 / 0.07);
+  }
+
+  .shimmer::after {
+    position: absolute;
+    inset: 0;
+    content: "";
+    transform: translateX(-100%);
+    background: linear-gradient(90deg, transparent, rgb(255 255 255 / 0.12), transparent);
+    animation: shimmer 1.25s infinite;
+  }
+
+  .heat-cell {
+    display: block;
+    width: 0.72rem;
+    height: 0.72rem;
+    border-radius: 0.2rem;
+    background: rgb(30 41 59 / 0.9);
+  }
+
+  .level-1 {
+    background: rgb(46 16 101);
+  }
+
+  .level-2 {
+    background: rgb(91 33 182);
+  }
+
+  .level-3 {
+    background: rgb(124 58 237);
+  }
+
+  .level-4,
+  .level-5 {
+    background: rgb(167 139 250);
+  }
+
+  .animate-rise {
+    animation: rise 800ms ease-out both;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(18px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes shimmer {
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-14px);
+    }
+  }
+}
+
+ 
