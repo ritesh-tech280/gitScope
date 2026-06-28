@@ -13,34 +13,35 @@
     <script src="./app.js" defer></script>
 </head>
 <body class="min-h-screen bg-[#070a12] text-white antialiased transition-colors duration-300 light-mode:bg-slate-100 light-mode:text-slate-950">
-    <div class="fixed inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,rgba(124,58,237,0.24),transparent_30%),radial-gradient(circle_at_top_right,rgba(37,99,235,0.20),transparent_28%),linear-gradient(135deg,#070a12_0%,#0d1220_46%,#080b14_100%)] light-mode:bg-[linear-gradient(135deg,#f8fafc_0%,#eef2ff_100%)]"></div>
-    <div class="fixed inset-0 -z-10 bg-[linear-gradient(rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.035)_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:linear-gradient(to_bottom,black,transparent_82%)]"></div>
+    <div class="fixed inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,rgba(16,185,129,0.18),transparent_35%),radial-gradient(circle_at_top_right,rgba(5,150,105,0.15),transparent_30%),linear-gradient(135deg,#040807_0%,#08120e_46%,#050a08_100%)] light-mode:bg-[linear-gradient(135deg,#f0fdf4_0%,#d1fae5_100%)]"></div>
+<div class="fixed inset-0 -z-10 bg-[linear-gradient(rgba(52,211,153,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(52,211,153,0.025)_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:linear-gradient(to_bottom,black,transparent_82%)]"></div>
+
 
     <button id="sidebarOverlay" class="fixed inset-0 z-30 hidden bg-black/60 lg:hidden" aria-label="Close sidebar"></button>
 
-    <aside id="sidebar" class="fixed inset-y-0 left-0 z-40 flex w-72 -translate-x-full flex-col border-r border-white/10 bg-[#09101f]/90 px-5 py-6 shadow-2xl shadow-black/40 backdrop-blur-2xl transition-transform duration-300 lg:translate-x-0 light-mode:border-slate-200 light-mode:bg-white/85">
+    <aside id="sidebar" class="fixed inset-y-0 left-0 z-40 flex w-72 -translate-x-full flex-col border-r border-white/10 bg-[#09181f]/90 px-5 py-6 shadow-2xl shadow-black/40 backdrop-blur-2xl transition-transform duration-300 lg:translate-x-0 light-mode:border-slate-200 light-mode:bg-white/85">
         <a href="#" class="flex items-center gap-3">
-            <span class="grid h-11 w-11 place-items-center rounded-xl bg-gradient-to-br from-blue-500 to-purple-500 text-lg font-black shadow-lg shadow-purple-950/30">GA</span>
+            <span class="grid h-11 w-11 place-items-center rounded-xl bg-gradient-to-br from-cyan-500 to-emerald-500 text-lg font-black shadow-lg shadow-emerald-950/30">GA</span>
             <span class="text-xl font-bold tracking-normal">GitHub Analyzer</span>
         </a>
 
         <nav class="mt-10 space-y-2 text-sm font-medium text-slate-300 light-mode:text-slate-600">
-            <a href="#dashboard" class="nav-link active-nav flex items-center gap-3 rounded-xl px-4 py-3 transition hover:bg-white/10 hover:text-white light-mode:hover:bg-slate-100">
+            <a href="#dashboard" class="nav-link active-nav flex items-center gap-3 rounded-xl px-4 py-3 transition hover:bg-white/10 hover:text-white light-mode:hover:bg-slate-100 light-mode:hover:text-slate-700">
                 <span class="text-lg">⌂</span> Dashboard
             </a>
-            <a href="#repositories" class="nav-link flex items-center gap-3 rounded-xl px-4 py-3 transition hover:bg-white/10 hover:text-white light-mode:hover:bg-slate-100">
+            <a href="#repositories" class="nav-link flex items-center gap-3 rounded-xl px-4 py-3 transition hover:bg-white/10 hover:text-white light-mode:hover:bg-slate-100 light-mode:hover:text-slate-700">
                 <span class="text-lg">▣</span> Repositories
             </a>
-            <a href="#languages" class="nav-link flex items-center gap-3 rounded-xl px-4 py-3 transition hover:bg-white/10 hover:text-white light-mode:hover:bg-slate-100">
+            <a href="#languages" class="nav-link flex items-center gap-3 rounded-xl px-4 py-3 transition hover:bg-white/10 hover:text-white light-mode:hover:bg-slate-100 light-mode:hover:text-slate-700">
                 <span class="text-lg">◌</span> Languages
             </a>
-            <a href="#activity" class="nav-link flex items-center gap-3 rounded-xl px-4 py-3 transition hover:bg-white/10 hover:text-white light-mode:hover:bg-slate-100">
+            <a href="#activity" class="nav-link flex items-center gap-3 rounded-xl px-4 py-3 transition hover:bg-white/10 hover:text-white light-mode:hover:bg-slate-100 light-mode:hover:text-slate-700">
                 <span class="text-lg">⌁</span> Activity
             </a>
-            <a href="#compare" class="nav-link flex items-center gap-3 rounded-xl px-4 py-3 transition hover:bg-white/10 hover:text-white light-mode:hover:bg-slate-100">
+            <a href="#compare" class="nav-link flex items-center gap-3 rounded-xl px-4 py-3 transition hover:bg-white/10 hover:text-white light-mode:hover:bg-slate-100 light-mode:hover:text-slate-700">
                 <span class="text-lg">⇄</span> Compare
             </a>
-            <a href="#history" class="nav-link flex items-center gap-3 rounded-xl px-4 py-3 transition hover:bg-white/10 hover:text-white light-mode:hover:bg-slate-100">
+            <a href="#history" class="nav-link flex items-center gap-3 rounded-xl px-4 py-3 transition hover:bg-white/10 hover:text-white light-mode:hover:bg-slate-100 light-mode:hover:text-slate-700">
                 <span class="text-lg">◷</span> Search History
             </a>
         </nav>
@@ -48,7 +49,7 @@
         <div class="mt-4 border-t border-white/10 pt-6 light-mode:border-slate-200 space-y-4">
             <div class="flex items-center justify-between rounded-xl bg-white/[0.04] px-4 py-3 light-mode:bg-slate-100">
                 <span class="text-sm font-medium text-slate-300 light-mode:text-slate-700">Dark Mode</span>
-                <button id="themeToggle" class="relative h-7 w-12 rounded-full bg-purple-600 transition light-mode:bg-slate-300" aria-label="Toggle dark mode">
+                <button id="themeToggle" class="relative h-7 w-12 rounded-full bg-emerald-500  transition light-mode:bg-slate-300" aria-label="Toggle dark mode">
                     <span class="absolute right-1 top-1 h-5 w-5 rounded-full bg-white transition light-mode:left-1 light-mode:right-auto"></span>
                 </button>
             </div>
@@ -64,7 +65,7 @@
         <section id="history" class="mt-8 min-h-0 flex-1">
             <div class="flex items-center justify-between">
                 <h2 class="text-sm font-semibold uppercase tracking-[0.18em] text-slate-500">Recent</h2>
-                <button id="clearHistoryBtn" class="text-xs text-purple-300 transition hover:text-white light-mode:text-purple-700">Clear</button>
+                <button id="clearHistoryBtn" class="text-xs text-emerald-300 transition hover:text-white light-mode:text-emerald-700">Clear</button>
             </div>
             <div id="recentSearches" class="mt-4 space-y-2 max-h-32 overflow-y-auto scrollbar-none"></div>
         </section>
@@ -79,9 +80,9 @@
                 <form id="searchForm" class="flex flex-1 flex-col gap-3 sm:flex-row">
                     <label class="relative flex-1">
                         <span class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">⌕</span>
-                        <input id="usernameInput" type="text" autocomplete="off" placeholder="Enter GitHub username or profile URL..." class="h-12 w-full rounded-xl border border-white/10 bg-white/[0.06] pl-11 pr-4 text-sm text-white outline-none transition placeholder:text-slate-500 focus:border-purple-400 focus:ring-4 focus:ring-purple-500/10 light-mode:border-slate-200 light-mode:bg-white light-mode:text-slate-950">
+                        <input id="usernameInput" type="text" autocomplete="off" placeholder="Enter GitHub username or profile URL..." class="h-12 w-full rounded-xl border border-white/10 bg-white/[0.06] pl-11 pr-4 text-sm text-white outline-none transition placeholder:text-slate-500 focus:border-emerald-400 focus:ring-4 focus:ring-emerald-500/10 light-mode:border-slate-200 light-mode:bg-white light-mode:text-slate-950">
                     </label>
-                    <button id="analyzeBtn" type="submit" class="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-blue-500 to-purple-600 px-7 text-sm font-semibold text-white shadow-lg shadow-purple-950/30 transition hover:-translate-y-0.5 hover:shadow-purple-800/30">
+                    <button id="analyzeBtn" type="submit" class="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan-500 to-emerald-600 px-7 text-sm font-semibold text-white shadow-lg shadow-emerald-950/30 transition hover:-translate-y-0.5 hover:shadow-emerald-800/30">
                         <span id="buttonSpinner" class="hidden h-4 w-4 animate-spin rounded-full border-2 border-white/30 border-t-white"></span>
                         <span id="buttonText">Analyze</span>
                     </button>
@@ -92,7 +93,7 @@
         <main class="px-4 py-6 sm:px-6 xl:px-10">
             <section id="welcomeState" class="grid min-h-[calc(100vh-112px)] place-items-center">
                 <div class="fade-in max-w-3xl text-center">
-                    <p class="mx-auto mb-5 inline-flex rounded-full border border-purple-400/30 bg-purple-500/10 px-4 py-2 text-sm font-medium text-purple-200 light-mode:text-purple-700">Search required to open the dashboard</p>
+                    <p class="mx-auto mb-5 inline-flex rounded-full border border-emerald-400/30 bg-emerald-500/10 px-4 py-2 text-sm font-medium text-emerald-200 light-mode:text-emerald-700">Search required to open the dashboard</p>
                     <h1 class="text-4xl font-bold leading-tight tracking-normal sm:text-6xl">GitHub Profile Analyzer Dashboard</h1>
                     <p class="mx-auto mt-6 max-w-2xl text-lg leading-8 text-slate-300 light-mode:text-slate-600">Enter a GitHub username or full profile URL in the top search bar to fetch live profile, repository, language, and activity insights.</p>
                 </div>
@@ -158,7 +159,7 @@
                         <article id="topReposCardDashboard" class="glass-card card-hover p-5">
                             <div class="mb-5 flex items-center justify-between">
                                 <h2 class="text-lg font-semibold">Top 5 Repositories</h2>
-                                <a id="viewAllReposLink" href="#repositories" class="text-sm text-purple-300 transition hover:text-white light-mode:text-purple-700">View all</a>
+                                <a id="viewAllReposLink" href="#repositories" class="text-sm text-emerald-300 transition hover:text-white light-mode:text-emerald-700">View all</a>
                             </div>
                             <div id="topRepositoriesDashboard" class="space-y-3"></div>
                         </article>
@@ -173,10 +174,10 @@
                             </div>
                             <div class="flex items-center gap-2 text-xs text-slate-400">
                                 <span>Less</span>
-                                <span class="h-3 w-3 rounded bg-purple-950"></span>
-                                <span class="h-3 w-3 rounded bg-purple-800"></span>
-                                <span class="h-3 w-3 rounded bg-purple-600"></span>
-                                <span class="h-3 w-3 rounded bg-purple-400"></span>
+                                <span class="h-3 w-3 rounded bg-emerald-950"></span>
+                                <span class="h-3 w-3 rounded bg-emerald-800"></span>
+                                <span class="h-3 w-3 rounded bg-emerald-600"></span>
+                                <span class="h-3 w-3 rounded bg-emerald-400"></span>
                                 <span>More</span>
                             </div>
                         </div>
@@ -204,7 +205,7 @@
                                     <h2 class="text-lg font-semibold">All Repositories</h2>
                                     <p class="text-sm text-slate-400 light-mode:text-slate-600">Search and explore public repositories.</p>
                                 </div>
-                                <input id="repoSearchInput" type="text" placeholder="Filter repositories..." class="h-10 rounded-xl border border-white/10 bg-white/[0.06] px-4 text-sm text-white outline-none placeholder:text-slate-500 focus:border-purple-400 light-mode:border-slate-200 light-mode:bg-white light-mode:text-slate-950">
+                                <input id="repoSearchInput" type="text" placeholder="Filter repositories..." class="h-10 rounded-xl border border-white/10 bg-white/[0.06] px-4 text-sm text-white outline-none placeholder:text-slate-500 focus:border-emerald-400 light-mode:border-slate-200 light-mode:bg-white light-mode:text-slate-950">
                             </div>
                             <div id="allRepositoriesDetailed" class="space-y-3 max-h-[500px] overflow-y-auto pr-2 scrollbar-none "></div>
                         </article>
@@ -235,10 +236,10 @@
                             </div>
                             <div class="flex items-center gap-2 text-xs text-slate-400">
                                 <span>Less</span>
-                                <span class="h-3 w-3 rounded bg-purple-950"></span>
-                                <span class="h-3 w-3 rounded bg-purple-800"></span>
-                                <span class="h-3 w-3 rounded bg-purple-600"></span>
-                                <span class="h-3 w-3 rounded bg-purple-400"></span>
+                                <span class="h-3 w-3 rounded bg-emerald-950"></span>
+                                <span class="h-3 w-3 rounded bg-emerald-800"></span>
+                                <span class="h-3 w-3 rounded bg-emerald-600"></span>
+                                <span class="h-3 w-3 rounded bg-emerald-400"></span>
                                 <span>More</span>
                             </div>
                         </div>
@@ -253,8 +254,8 @@
                         <p class="text-sm text-slate-400 light-mode:text-slate-600 mb-6">Compare the current profile with another GitHub user side-by-side.</p>
                         
                         <form id="compareForm" class="flex flex-col gap-3 sm:flex-row max-w-xl mb-8">
-                            <input id="compareInput" type="text" autocomplete="off" placeholder="Enter second GitHub username..." class="h-12 flex-1 rounded-xl border border-white/10 bg-white/[0.06] px-4 text-sm text-white outline-none transition placeholder:text-slate-500 focus:border-purple-400 focus:ring-4 focus:ring-purple-500/10 light-mode:border-slate-200 light-mode:bg-white light-mode:text-slate-950">
-                            <button id="compareBtn" type="submit" class="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-blue-500 to-purple-600 px-7 text-sm font-semibold text-white transition hover:-translate-y-0.5">
+                            <input id="compareInput" type="text" autocomplete="off" placeholder="Enter second GitHub username..." class="h-12 flex-1 rounded-xl border border-white/10 bg-white/[0.06] px-4 text-sm text-white outline-none transition placeholder:text-slate-500 focus:border-emerald-400 focus:ring-4 focus:ring-emerald-500/10 light-mode:border-slate-200 light-mode:bg-white light-mode:text-slate-950">
+                            <button id="compareBtn" type="submit" class="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan-500 to-emerald-600 px-7 text-sm font-semibold text-white transition hover:-translate-y-0.5">
                                 <span id="compareSpinner" class="hidden h-4 w-4 animate-spin rounded-full border-2 border-white/30 border-t-white"></span>
                                 <span>Compare</span>
                             </button>

@@ -28,8 +28,8 @@
   }
 
   .active-nav {
-    border: 1px solid rgb(139 92 246 / 0.35);
-    background: linear-gradient(135deg, rgb(59 130 246 / 0.18), rgb(139 92 246 / 0.24));
+    border: 1px solid rgba(92, 246, 177, 0.35);
+    background: linear-gradient(135deg, rgba(59, 246, 178, 0.18), rgba(92, 246, 200, 0.24));
     color: white;
   }
 
@@ -43,7 +43,7 @@
 
   .card-hover:hover {
     transform: translateY(-4px);
-    border-color: rgb(139 92 246 / 0.45);
+    border-color: rgba(92, 246, 182, 0.45);
   }
 
   .fade-in {
@@ -70,24 +70,24 @@
     width: 0.72rem;
     height: 0.72rem;
     border-radius: 0.2rem;
-    background: rgb(30 41 59 / 0.9);
+    background: rgba(30, 39, 59, 0.9);
   }
 
   .level-1 {
-    background: rgb(46 16 101);
+    background: rgb(16, 101, 66);
   }
 
   .level-2 {
-    background: rgb(91 33 182);
+    background: rgb(33, 182, 130);
   }
 
   .level-3 {
-    background: rgb(124 58 237);
+    background: rgb(58, 237, 159);
   }
 
   .level-4,
   .level-5 {
-    background: rgb(167 139 250);
+    background: rgb(139, 250, 196);
   }
 
   .animate-rise {

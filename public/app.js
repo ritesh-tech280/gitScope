@@ -7,7 +7,7 @@ const state = {
     history: JSON.parse(localStorage.getItem("githubAnalyzerHistory") || "[]"),
 };
 
-const API_BASE_URL = `${window.location.origin}/api/github`;
+const API_BASE_URL = `https://gitscope.up.railway.app/api/github`;
 
 const elements = {
     form: document.getElementById("searchForm"),
@@ -108,22 +108,22 @@ function renderProfile(profile, repositories) {
 
     elements.profileSection.innerHTML = `
     <div class="flex flex-col gap-5 md:flex-row md:items-center">
-      <img src="${profile.avatar_url}" alt="${profile.login} avatar" class="h-28 w-28 rounded-3xl border border-white/10 object-cover shadow-xl shadow-purple-950/30">
+      <img src="${profile.avatar_url}" alt="${profile.login} avatar" class="h-28 w-28 rounded-3xl border border-white/10 object-cover shadow-xl shadow-emerald-950/30">
       <div class="min-w-0 flex-1">
         <div class="flex flex-wrap items-center gap-3">
           <h1 class="text-3xl font-bold tracking-normal">${profile.name || profile.login}</h1>
           <span class="rounded-full bg-blue-500 px-2 py-1 text-xs font-bold">✓</span>
         </div>
-        <p class="mt-1 text-lg font-semibold text-purple-300">@${profile.login}</p>
+        <p class="mt-1 text-lg font-semibold text-emerald-300">@${profile.login}</p>
         <p class="mt-3 max-w-3xl leading-7 text-slate-300 light-mode:text-slate-600">${profile.bio || "No bio available for this profile."}</p>
         <div class="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-sm text-slate-400 light-mode:text-slate-600">
           <span>⌖ ${profile.location || "Location unavailable"}</span>
-          ${website ? `<a class="text-purple-300 transition hover:text-white light-mode:text-purple-700" href="${website}" target="_blank" rel="noreferrer">↗ ${website.replace(/^https?:\/\//, "")}</a>` : "<span>↗ Website unavailable</span>"}
+          ${website ? `<a class="text-emerald-300 transition hover:text-white light-mode:text-emerald-700" href="${website}" target="_blank" rel="noreferrer">↗ ${website.replace(/^https?:\/\//, "")}</a>` : "<span>↗ Website unavailable</span>"}
           <span>□ Joined ${formatDate(profile.created_at)}</span>
         </div>
         <div class="mt-5 flex flex-wrap gap-3">
           <button id="copyProfileUrlBtn" class="rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold transition hover:bg-white/10 light-mode:border-slate-200 light-mode:bg-white">Copy Profile URL</button>
-          <a class="rounded-xl bg-gradient-to-r from-blue-500 to-purple-600 px-4 py-2 text-sm font-semibold text-white transition hover:-translate-y-0.5" href="${profile.html_url}" target="_blank" rel="noreferrer">Open GitHub Profile</a>
+          <a class="rounded-xl bg-gradient-to-r from-cyan-500 to-emerald-600 px-4 py-2 text-sm font-semibold text-white transition hover:-translate-y-0.5" href="${profile.html_url}" target="_blank" rel="noreferrer">Open GitHub Profile</a>
         </div>
       </div>
     </div>
@@ -158,8 +158,8 @@ function renderDeveloperScore(profile, repositories) {
     elements.scoreCard.innerHTML = `
     <div class="rounded-3xl border border-white/10 bg-white/[0.04] p-6 text-center shadow-inner shadow-white/5 light-mode:border-slate-200 light-mode:bg-white">
       <p class="text-sm text-slate-300 light-mode:text-slate-600">🏆 Developer Score</p>
-      <p class="mt-5 bg-gradient-to-r from-purple-300 to-blue-300 bg-clip-text text-6xl font-black text-transparent">${formatNumber(score)}</p>
-      <span class="mt-4 inline-flex rounded-xl px-4 py-2 text-sm font-semibold ${badgeClasses[level]}">${level} Developer</span>
+      <p class="mt-5 bg-gradient-to-r from-emerald-300 to-blue-300 bg-clip-text text-6xl font-black text-transparent">${formatNumber(score)}</p>
+      <span class="mt-4 light-mode:text-emerald-600 inline-flex rounded-xl px-4 py-2 text-sm font-semibold ${badgeClasses[level]}">${level} Developer</span>
     </div>
   `;
 }
@@ -177,9 +177,9 @@ function renderStatistics(profile, repositories) {
 
     elements.statisticsRow.innerHTML = stats
         .map(([icon, label, value]) => `
-      <article class="rounded-2xl border border-white/10 bg-white/[0.04] p-4 transition hover:-translate-y-1 hover:border-purple-400/50 light-mode:border-slate-200 light-mode:bg-white">
+      <article class="rounded-2xl border border-white/10 bg-white/[0.04] p-4 transition hover:-translate-y-1 hover:border-emerald-400/50 light-mode:border-slate-200 light-mode:bg-white">
         <div class="flex items-center gap-3">
-          <span class="text-2xl text-purple-300">${icon}</span>
+          <span class="text-2xl text-emerald-300">${icon}</span>
           <div>
             <p class="text-2xl font-bold">${formatNumber(value)}</p>
             <p class="text-sm text-slate-400 light-mode:text-slate-600">${label}</p>
@@ -272,7 +272,7 @@ function renderLanguagesChart(repositories) {
                 return `
             <div class="flex items-center justify-between gap-3 text-base p-2 rounded-xl bg-white/[0.02] light-mode:bg-slate-50">
               <span class="flex items-center gap-3"><span class="h-3.5 w-3.5 rounded-full" style="background:${colors[index]}"></span>${label}</span>
-              <span class="font-semibold text-purple-300 light-mode:text-purple-700">${percentage}%</span>
+              <span class="font-semibold text-emerald-300 light-mode:text-emerald-700">${percentage}%</span>
             </div>
           `;
             })
@@ -394,9 +394,9 @@ function renderTopRepositories(repositories) {
         topContainer.innerHTML = topRepositories.length
             ? topRepositories
                 .map((repository) => `
-              <a href="${repository.html_url}" target="_blank" rel="noreferrer" class="group flex items-center justify-between gap-4 rounded-2xl border border-white/10 bg-white/[0.035] p-4 transition hover:-translate-y-1 hover:border-purple-400/50 hover:bg-white/[0.07] light-mode:border-slate-200 light-mode:bg-white">
+              <a href="${repository.html_url}" target="_blank" rel="noreferrer" class="group flex items-center justify-between gap-4 rounded-2xl border border-white/10 bg-white/[0.035] p-4 transition hover:-translate-y-1 hover:border-emerald-400/50 hover:bg-white/[0.07] light-mode:border-slate-200 light-mode:bg-white">
                 <div class="min-w-0">
-                  <h3 class="truncate font-semibold group-hover:text-purple-200 light-mode:group-hover:text-purple-700">${repository.name}</h3>
+                  <h3 class="truncate font-semibold group-hover:text-emerald-200 light-mode:group-hover:text-emerald-700">${repository.name}</h3>
                   <p class="mt-1 text-sm text-slate-400 light-mode:text-slate-600">${repository.language || "Unknown"}</p>
                 </div>
                 <div class="flex shrink-0 items-center gap-4 text-sm text-slate-300 light-mode:text-slate-600">
@@ -426,9 +426,9 @@ function renderAllRepositoriesDetailed(repos) {
     container.innerHTML = repos.length
         ? repos
             .map((repository) => `
-          <a href="${repository.html_url}" target="_blank" rel="noreferrer" class="group flex items-center justify-between gap-4 rounded-2xl border border-white/10 bg-white/[0.035] p-4 transition hover:-translate-y-0.5 hover:border-purple-400/50 hover:bg-white/[0.07] light-mode:border-slate-200 light-mode:bg-white">
+          <a href="${repository.html_url}" target="_blank" rel="noreferrer" class="group flex items-center justify-between gap-4 rounded-2xl border border-white/10 bg-white/[0.035] p-4 transition hover:-translate-y-0.5 hover:border-emerald-400/50 hover:bg-white/[0.07] light-mode:border-slate-200 light-mode:bg-white">
             <div class="min-w-0">
-              <h3 class="truncate font-semibold group-hover:text-purple-200 light-mode:group-hover:text-purple-700">${repository.name}</h3>
+              <h3 class="truncate font-semibold group-hover:text-emerald-200 light-mode:group-hover:text-emerald-700">${repository.name}</h3>
               <p class="mt-1 text-sm text-slate-400 light-mode:text-slate-600">${repository.language || "Unknown"}</p>
             </div>
             <div class="flex shrink-0 items-center gap-4 text-sm text-slate-300 light-mode:text-slate-600">
@@ -570,7 +570,7 @@ function renderSearchHistory() {
                 .map((username) => `
                     <div class="flex items-center justify-between rounded-xl bg-white/[0.04] p-4 light-mode:bg-white light-mode:border light-mode:border-slate-200">
                         <span class="font-semibold text-slate-300 light-mode:text-slate-700">@${username}</span>
-                        <button class="history-item-btn rounded-lg bg-purple-600 px-3 py-1.5 text-xs font-semibold text-white transition hover:bg-purple-700 hover:scale-105" data-username="${username}">Analyze</button>
+                        <button class="history-item-btn rounded-lg bg-emerald-600 px-3 py-1.5 text-xs font-semibold text-white transition hover:bg-emerald-700 hover:scale-105" data-username="${username}">Analyze</button>
                     </div>
                 `)
                 .join("")
@@ -693,7 +693,7 @@ async function compareProfiles(event) {
                     <img src="${profile1.avatar_url}" alt="${profile1.login}" class="h-16 w-16 rounded-2xl object-cover border border-white/10">
                     <div>
                         <h3 class="text-xl font-bold">${profile1.name || profile1.login}</h3>
-                        <p class="text-sm text-purple-300">@${profile1.login}</p>
+                        <p class="text-sm text-emerald-300">@${profile1.login}</p>
                     </div>
                 </div>
                 <div class="space-y-4">
@@ -725,7 +725,7 @@ async function compareProfiles(event) {
                     <img src="${profile2.avatar_url}" alt="${profile2.login}" class="h-16 w-16 rounded-2xl object-cover border border-white/10">
                     <div>
                         <h3 class="text-xl font-bold">${profile2.name || profile2.login}</h3>
-                        <p class="text-sm text-purple-300">@${profile2.login}</p>
+                        <p class="text-sm text-emerald-300">@${profile2.login}</p>
                     </div>
                 </div>
                 <div class="space-y-4">
